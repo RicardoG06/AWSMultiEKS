@@ -1,0 +1,24 @@
+{
+  "availability-zones:account=670603363245:region=us-east-1": [
+    "us-east-1a",
+    "us-east-1b",
+    "us-east-1c",
+    "us-east-1d",
+    "us-east-1e",
+    "us-east-1f"
+  ],
+  "hosted-zone:account=670603363245:domainName=cloudboy.click:privateZone=false:region=us-east-1": {
+    "Id": "/hostedzone/Z021188521IDBSRT65MWW",
+    "Name": "cloudboy.click."
+  },
+  "availability-zones:account=670603363245:region=us-west-2": [
+    "us-west-2a",
+    "us-west-2b",
+    "us-west-2c",
+    "us-west-2d"
+  ],
+  "hosted-zone:account=670603363245:domainName=cloudboy.click:privateZone=false:region=us-west-2": {
+    "Id": "/hostedzone/Z021188521IDBSRT65MWW",
+    "Name": "cloudboy.click."
+  }
+}

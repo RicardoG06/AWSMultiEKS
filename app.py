@@ -3,26 +3,25 @@ import os
 
 import aws_cdk as cdk
 
-from ia_c.ia_c_stack import IaCStack
-
+from ia_c.principal_stack_v import PrincipalStackV
+from ia_c.secondary_stack_o import SecondaryStackO
 
 app = cdk.App()
-IaCStack(app, "IaCStack",
-    # If you don't specify 'env', this stack will be environment-agnostic.
-    # Account/Region-dependent features and context lookups will not work,
-    # but a single synthesized template can be deployed anywhere.
 
-    # Uncomment the next line to specialize this stack for the AWS Account
-    # and Region that are implied by the current CLI configuration.
+# Configura la cuenta y región
+env_virginia = cdk.Environment(
+    account="670603363245",  # Directamente como string
+    region="us-east-1"
+)
+# Configura la cuenta y región
+env_oregon = cdk.Environment(
+    account="670603363245",  # Directamente como string
+    region="us-west-2"
+)
+# Crear stack de Virginia
+virginia_stack = PrincipalStackV(app, "DemoStackV", env=env_virginia)
 
-    #env=cdk.Environment(account=os.getenv('CDK_DEFAULT_ACCOUNT'), region=os.getenv('CDK_DEFAULT_REGION')),
-
-    # Uncomment the next line if you know exactly what Account and Region you
-    # want to deploy the stack to. */
-
-    #env=cdk.Environment(account='123456789012', region='us-east-1'),
-
-    # For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html
-    )
+# Crear stack de Oregón
+oregon_stack = SecondaryStackO(app, "DemoStackO", env=env_oregon)
 
 app.synth()

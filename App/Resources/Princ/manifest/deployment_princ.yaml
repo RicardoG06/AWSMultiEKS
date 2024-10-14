@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-app
+  template:
+    metadata:
+      labels:
+        app: demo-app
+    spec:
+      containers:
+        - name: flask-container
+          image: 670603363245.dkr.ecr.us-east-1.amazonaws.com/repo-demo-app:latest
+          ports:
+            - containerPort: 80
+          env:
+            - name: AWS_REGION
+              value: "us-east-1"  # Cambia esto a la región que corresponda

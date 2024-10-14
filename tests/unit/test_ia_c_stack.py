@@ -1,7 +1,7 @@
 import aws_cdk as core
 import aws_cdk.assertions as assertions
 
-from ia_c.ia_c_stack import IaCStack
+from IaC.ia_c.principal_stack_v import IaCStack
 
 # example tests. To run these tests, uncomment this file along with the example
 # resource in ia_c/ia_c_stack.py
